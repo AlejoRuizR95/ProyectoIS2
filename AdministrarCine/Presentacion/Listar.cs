@@ -83,8 +83,7 @@ namespace Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string valor1 = Convert.ToString(dataGridView1.Rows[1].Cells[1].Value);
-            string valor2 = Convert.ToString(dataGridView1.Rows[1].Cells[2].Value);
+            
             //MessageBox.Show("Valor 1:" + valor1 +" Valor 2:" + valor2);
 
 
