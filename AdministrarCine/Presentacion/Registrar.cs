@@ -24,8 +24,11 @@ namespace Presentacion
             string msj = "";
             try
             {
-                S.Silla = textBox1.Text;
-                S.Estado = textBox2.Text;
+                S.Columna = "A";
+                S.Fila = 1;
+                S.Dato = 0;
+                S.Tabla = "tabla6";
+
                 msj= S.Registrar_Silla();
 
                 MessageBox.Show(msj);
