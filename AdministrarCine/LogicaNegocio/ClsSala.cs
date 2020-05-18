@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos;
 
+
 namespace LogicaNegocio
 {
     public class ClsSala
@@ -137,7 +138,45 @@ namespace LogicaNegocio
             return ("S"+s[0]);
 
         }
-           
+
+
+        public static double Calcular_Pago(string fila, string fecha, string hora)
+        {
+            double precio = 15000;
+            string dia = "";
+            DateTime date = DateTime.Parse(hora, System.Globalization.CultureInfo.CurrentCulture);
+            Int32 hora1 = date.Hour;
+            DateTime oDate = Convert.ToDateTime(fecha);            
+            dia = oDate.ToString("dddd", new CultureInfo("es-ES"));
+            //Console.WriteLine(dia);
+
+
+            if (dia == "martes" || dia == "miércoles")
+            {
+
+                precio = (precio * 0.5);
+            }
+            else if ((dia == "lunes" || dia == "jueves") && hora1 <= 15)
+            {
+                precio = (precio * 0.65);
+            }
+            else if((dia == "viernes" || dia == "sabado" || dia == "domingo") && hora1 <= 15) {
+                precio = (precio * 0.8);
+            }
+
+            if(fila =="9" || fila == "10")
+            {
+
+                precio = precio*1.20;
+
+            }
+            Console.WriteLine(precio);
+            return precio;
+            
+
+
+        }
+
 
     }
 }
