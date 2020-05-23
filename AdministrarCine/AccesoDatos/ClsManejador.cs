@@ -15,16 +15,16 @@ namespace AccesoDatos
 
         public void abrir_conexion()
         {
-            /*if (conexion.State == ConnectionState.Closed){ 
+            if (conexion.State == ConnectionState.Closed){ 
                 conexion.Open();                
-            }*/
+            }
             
             
         }
         public void cerrar_conexion()
         {
-            /*if (conexion.State == ConnectionState.Open)
-                conexion.Close();*/
+            if (conexion.State == ConnectionState.Open)
+                conexion.Close();
             
         }
 

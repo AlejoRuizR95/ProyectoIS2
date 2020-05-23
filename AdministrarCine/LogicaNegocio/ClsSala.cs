@@ -139,6 +139,43 @@ namespace LogicaNegocio
 
         }
 
+        public string Programar_Pelicula(string Pelicula, string Sala, string Fecha, string Hora)
+        {
+
+            string msj = "";
+
+            List<ClsParametros> list = new List<ClsParametros>();
+            try
+            {
+                string Fecha2 = "";
+                DateTime dt2 = DateTime.ParseExact(Fecha, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+                Fecha2 = dt2.ToString("yyyy-mm-dd");
+
+                Console.WriteLine(Fecha);
+
+                //pasar parametros Entrada 
+                list.Add(new ClsParametros("@Pelicula", Pelicula));
+                list.Add(new ClsParametros("@Sala", Sala));
+                list.Add(new ClsParametros("@Dia", Fecha2));
+                list.Add(new ClsParametros("@Hora", Hora));
+
+                //pasar parametros Salida
+                list.Add(new ClsParametros("@Id", SqlDbType.VarChar, 100));
+
+                M.Ejecutar_P("Programar_Pelicula", list);
+                msj = list[4].Valor.ToString();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return msj;
+
+        }
+
 
         public static double Calcular_Pago(string fila, string fecha, string hora)
         {

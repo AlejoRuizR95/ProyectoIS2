@@ -24,12 +24,7 @@ namespace Presentacion
             string msj = "";
             try
             {
-                S.Columna = "A";
-                S.Fila = 1;
-                S.Dato = 0;
-                S.Tabla = "tabla6";
-
-                msj= S.Registrar_Silla();
+              msj= S.Programar_Pelicula(Convert.ToString(comboBoxPelicula.SelectedItem), txtSala.Text, Calendar1.SelectionStart.ToString("dd\\/MM\\/yyyy"), txtHora.Text); 
 
                 MessageBox.Show(msj);
 
@@ -44,15 +39,20 @@ namespace Presentacion
 
         private void Registrar_Load(object sender, EventArgs e)
         {
-            List<string> Sillas = S.ListadoSillas();
+            List<string> Sillas = S.ListadoPeliculas();
             string Item;
 
             for (int i = 0; i < Sillas.Count(); i++)
             {
                 Item = Sillas[i];
-                comboBox1.Items.Add(Item);
+                comboBoxPelicula.Items.Add(Item);
             }
             
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

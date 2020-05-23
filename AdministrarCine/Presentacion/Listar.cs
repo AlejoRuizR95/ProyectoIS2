@@ -31,8 +31,7 @@ namespace Presentacion
                 Item = Peliculas[i];
                 comboBox1.Items.Add(Item);
             }
-            //DataTable dt = S.ListadoSala("Sala2");
-            //dataGridView1.DataSource = dt;
+            
 
             //Pintar Celdas
             PintarCeldas();
