@@ -11,8 +11,8 @@ namespace AccesoDatos
 {
     public class ClsManejador
     {
-        SqlConnection conexion = new SqlConnection("server = DESKTOP-BOAODT5\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
-
+        SqlConnection conexion = new SqlConnection("server = DESKTOP-6EIA1KD\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
+        
         public void abrir_conexion()
         {
             if (conexion.State == ConnectionState.Closed){ 
