@@ -5,13 +5,16 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using LogicaNegocio;
+using System.Web.Http.Cors;
 
 namespace AplicacionREST.Controllers
 {
+    [EnableCors("*", "*", "*")]
+    
     public class CineController : ApiController
     {
        
-
+        
         // GET api/<controller>/5
         public string Get(string Columna, int Fila, int Dato, string Tabla)
         {
@@ -23,6 +26,16 @@ namespace AplicacionREST.Controllers
             return S.Registrar_Silla();
         }
 
+        // GET api/<controller>/5
+        public List<string> Get()
+        {
+            ClsSala S = new ClsSala();
+            return S.ListadoPeliculas();
+        }
+
         
+
+
+
     }
 }

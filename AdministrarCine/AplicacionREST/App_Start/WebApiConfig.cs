@@ -11,7 +11,7 @@ namespace AplicacionREST
         public static void Register(HttpConfiguration config)
         {
             // Configuración y servicios de API web
-
+            config.EnableCors();
             // Rutas de API web
             config.MapHttpAttributeRoutes();
 
@@ -21,6 +21,7 @@ namespace AplicacionREST
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            
             config.Formatters.JsonFormatter.SupportedMediaTypes
         .Add(new MediaTypeHeaderValue("text/html"));
         }
