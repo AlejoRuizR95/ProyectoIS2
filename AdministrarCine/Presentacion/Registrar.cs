@@ -54,5 +54,12 @@ namespace Presentacion
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Inicio ini = new Inicio();
+            this.Hide();
+            ini.Show();
+        }
     }
 }

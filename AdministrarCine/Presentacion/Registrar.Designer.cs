@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Calendar1 = new System.Windows.Forms.MonthCalendar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtSala
@@ -115,11 +116,22 @@
             this.Calendar1.Name = "Calendar1";
             this.Calendar1.TabIndex = 8;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(300, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Inicio";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(390, 394);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Calendar1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -130,6 +142,7 @@
             this.Controls.Add(this.txtHora);
             this.Controls.Add(this.txtSala);
             this.Name = "Registrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Registrar_Load);
             this.ResumeLayout(false);
@@ -149,6 +162,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MonthCalendar Calendar1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
