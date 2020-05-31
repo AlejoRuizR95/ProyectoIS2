@@ -27,14 +27,22 @@ namespace AplicacionREST.Controllers
         }
 
         // GET api/<controller>/5
-        public List<string> Get()
+        /*public List<string> Get()
         {
             ClsSala S = new ClsSala();
             return S.ListadoPeliculas();
+
+        }*/
+
+        public System.Data.DataTable Get()
+        {
+            ClsSala S = new ClsSala();           
+            
+            return S.ListarTablaPeliculas();
+            
+
         }
-
         
-
 
 
     }

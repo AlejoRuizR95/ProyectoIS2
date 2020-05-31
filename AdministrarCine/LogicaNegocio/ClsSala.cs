@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using AccesoDatos;
 
 
+
 namespace LogicaNegocio
 {
     public class ClsSala
@@ -58,6 +59,17 @@ namespace LogicaNegocio
 
             return msj;
         
+        }
+
+        public DataTable ListarTablaPeliculas()
+        {
+            DataTable dt;
+            dt = M.Listado("Listar_FullPeliculas", null);
+
+            return dt; 
+
+
+
         }
 
         public DataTable ListadoSala(string Sala) {
