@@ -249,24 +249,24 @@ namespace LogicaNegocio
             {
 
                 precio = (precio * 0.5);
-                acumFactura = acumFactura + precio;
+                
                 text = "Silla "+Columna + Fila.ToString() + " - Día Mart/Mierc: " + precio.ToString();
             }
             else if ((dia == "lunes" || dia == "jueves") && hora1 <= 15)
             {
                 precio = (precio * 0.65);
-                acumFactura = acumFactura + precio;
+                
                 text = "Silla " + Columna + Fila.ToString() + " - Día Normal ant. 3 pm: " + precio.ToString();
             }
             else if ((dia == "viernes" || dia == "sábado" || dia == "domingo") && hora1 <= 15)
             {
                 precio = (precio * 0.8);
-                acumFactura = acumFactura + precio;
+                
                 text = "Silla " + Columna + Fila.ToString() + " - Fin de Sem. ant 3 pm: " + precio.ToString();
             }
             else
             {
-                acumFactura = acumFactura + precio;
+                
                 text = "Silla " + Columna + Fila.ToString() + " - Precio Stand.: " + precio.ToString();
             }
 
@@ -274,11 +274,12 @@ namespace LogicaNegocio
             {
 
                 precio = precio * 1.20;
-                acumFactura = acumFactura + precio;
+                
                 text = "Silla " + Columna + Fila.ToString() + " - Fila VIP: " + precio.ToString();
 
             }
-            
+            acumFactura = acumFactura + precio;
+
             return text;
 
 
