@@ -30,5 +30,10 @@ namespace Presentacion
             Reservar res = new Reservar();
             res.Show();
         }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
