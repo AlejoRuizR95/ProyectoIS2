@@ -52,7 +52,7 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(194, 187);
+            this.button2.Location = new System.Drawing.Point(223, 187);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 32);
             this.button2.TabIndex = 1;

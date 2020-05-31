@@ -70,6 +70,7 @@ namespace Presentacion
             //comboBox3.Text = "";
             Seleccion1 = Convert.ToString(comboBox1.SelectedItem);
             Seleccion2 = Convert.ToString(comboBox2.SelectedItem);
+            
             List<string> Fechas = S.LeerHoras(Seleccion1,Seleccion2);
             string Item;
             for (int i = 0; i < Fechas.Count(); i++)
@@ -107,10 +108,21 @@ namespace Presentacion
 
                 msj = S.Registrar_Silla();
 
+                if (msj == "La silla se reservo correctamente")
+                {
+                    listFactura.Items.Add(S.Calcular_Pago());
+                    txtTotal.Text = S.acumFactura.ToString();
+                }
+                
+
+                
+
                 MessageBox.Show(msj);                
                 DataTable dt = S.ListadoSala(Sala);
                 dataGridView1.DataSource = dt;
                 PintarCeldas();
+
+                
 
             }
             catch (Exception ex)
@@ -149,14 +161,24 @@ namespace Presentacion
             DataTable dt = S.ListadoSala(Sala);
             dataGridView1.DataSource = dt;
             PintarCeldas();
-            
+            S.Fecha = comboBox2.Text;
+            S.Hora = comboBox3.Text;
+
 
 
 
         }
 
-      
+        private void label4_Click(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void btnNuevFact_Click(object sender, EventArgs e)
+        {
+            S.acumFactura = 0;
+            listFactura.Items.Clear();
+            txtTotal.Text="";
+        }
     }
 }

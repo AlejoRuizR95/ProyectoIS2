@@ -19,6 +19,10 @@ namespace LogicaNegocio
         public int Fila { get; set; }
         public int Dato { get; set; }
         public string Tabla { get; set; }
+        public string Fecha { get; set; }
+        public string Hora { get; set; }
+
+        public double acumFactura { get; set; }
         //public string Pelicula { get; set; }
 
         //Actualizar Silla
@@ -49,6 +53,8 @@ namespace LogicaNegocio
 
                 M.Ejecutar_P("CambiarDato", list);
                 msj = list[4].Valor.ToString();
+
+                
 
             }
             catch (Exception ex)
@@ -209,7 +215,7 @@ namespace LogicaNegocio
             {
                 precio = (precio * 0.65);
             }
-            else if((dia == "viernes" || dia == "sabado" || dia == "domingo") && hora1 <= 15) {
+            else if((dia == "viernes" || dia == "sábado" || dia == "domingo") && hora1 <= 15) {
                 precio = (precio * 0.8);
             }
 
@@ -222,6 +228,59 @@ namespace LogicaNegocio
             Console.WriteLine(precio);
             return precio;
             
+
+
+        }
+
+        public string Calcular_Pago()
+        {
+            string text = "";
+            double precio = 15000;
+            string dia = "";
+            Console.WriteLine(Fecha);
+            DateTime date = DateTime.Parse(Hora, System.Globalization.CultureInfo.CurrentCulture);
+            Int32 hora1 = date.Hour;
+            DateTime oDate = Convert.ToDateTime(Fecha);
+            dia = oDate.ToString("dddd", new CultureInfo("es-ES"));
+            //Console.WriteLine(dia);
+
+
+            if (dia == "martes" || dia == "miércoles")
+            {
+
+                precio = (precio * 0.5);
+                acumFactura = acumFactura + precio;
+                text = "Silla "+Columna + Fila.ToString() + " - Día Mart/Mierc: " + precio.ToString();
+            }
+            else if ((dia == "lunes" || dia == "jueves") && hora1 <= 15)
+            {
+                precio = (precio * 0.65);
+                acumFactura = acumFactura + precio;
+                text = "Silla " + Columna + Fila.ToString() + " - Día Normal ant. 3 pm: " + precio.ToString();
+            }
+            else if ((dia == "viernes" || dia == "sábado" || dia == "domingo") && hora1 <= 15)
+            {
+                precio = (precio * 0.8);
+                acumFactura = acumFactura + precio;
+                text = "Silla " + Columna + Fila.ToString() + " - Fin de Sem. ant 3 pm: " + precio.ToString();
+            }
+            else
+            {
+                acumFactura = acumFactura + precio;
+                text = "Silla " + Columna + Fila.ToString() + " - Precio Stand.: " + precio.ToString();
+            }
+
+            if (Fila == 9 || Fila == 10)
+            {
+
+                precio = precio * 1.20;
+                acumFactura = acumFactura + precio;
+                text = "Silla " + Columna + Fila.ToString() + " - Fila VIP: " + precio.ToString();
+
+            }
+            
+            return text;
+
 
 
         }
