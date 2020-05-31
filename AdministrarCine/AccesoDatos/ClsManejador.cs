@@ -10,8 +10,15 @@ using System.Windows.Forms;
 namespace AccesoDatos
 {
     public class ClsManejador
-    {
-        SqlConnection conexion = new SqlConnection("server = DESKTOP-BOAODT5\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
+    {   
+        //Alejo
+        //SqlConnection conexion = new SqlConnection("server = DESKTOP-BOAODT5\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
+
+        //Dani M
+        SqlConnection conexion = new SqlConnection("server = DESKTOP-SS6ETK9\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
+
+        //Dani R
+        //SqlConnection conexion = new SqlConnection("server = DESKTOP-6EIA1KD\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
 
         public void abrir_conexion()
         {
