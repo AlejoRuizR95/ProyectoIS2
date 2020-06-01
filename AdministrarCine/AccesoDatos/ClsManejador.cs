@@ -12,13 +12,17 @@ namespace AccesoDatos
     public class ClsManejador
     {   
         //Alejo
+<<<<<<< HEAD
         //SqlConnection conexion = new SqlConnection("server = DESKTOP-BOAODT5\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
+=======
+       // SqlConnection conexion = new SqlConnection("server = DESKTOP-BOAODT5\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
+>>>>>>> a778ecac285f2b06eb098ecea0e0c25f7f362eeb
 
         //Dani M
         SqlConnection conexion = new SqlConnection("server = DESKTOP-SS6ETK9\\SQLEXPRESS; DataBase = BDCinee; Integrated Security = True ");
 
         //Dani R
-        //SqlConnection conexion = new SqlConnection("server = DESKTOP-6EIA1KD\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
+        SqlConnection conexion = new SqlConnection("server = DESKTOP-6EIA1KD\\SQLEXPRESS; DataBase = BDCine; Integrated Security = True ");
 
         public void abrir_conexion()
         {

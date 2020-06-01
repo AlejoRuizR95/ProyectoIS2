@@ -120,6 +120,7 @@ namespace LogicaNegocio
 
         }
 
+<<<<<<< HEAD
         public DataTable Fechas(string Pelicula)
         {
             List<ClsParametros> list = new List<ClsParametros>();
@@ -147,6 +148,10 @@ namespace LogicaNegocio
             return dt;
         }
 
+=======
+       
+        
+>>>>>>> a778ecac285f2b06eb098ecea0e0c25f7f362eeb
         public List<string> LeerHoras(string Pelicula, string Dia)
         {
             List<ClsParametros> list = new List<ClsParametros>();
@@ -317,6 +322,7 @@ namespace LogicaNegocio
 
         }
 
+      
 
     }
 }
