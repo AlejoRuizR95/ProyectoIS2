@@ -73,9 +73,14 @@ namespace LogicaNegocio
             dt = M.Listado("Listar_FullPeliculas", null);
 
             return dt; 
+        }
 
+        public DataTable TablaProgramacion()
+        {
+            DataTable dt;
+            dt = M.Listado("ListarProgramacion", null);
 
-
+            return dt;
         }
 
         public DataTable ListadoSala(string Sala) {
@@ -102,7 +107,6 @@ namespace LogicaNegocio
 
         }
 
-
         public List<string> LeerFechas(string Pelicula) {
             List<ClsParametros> list = new List<ClsParametros>();
             list.Add(new ClsParametros("@Pelicula", Pelicula));
@@ -114,6 +118,33 @@ namespace LogicaNegocio
 
             return s;
 
+        }
+
+        public DataTable Fechas(string Pelicula)
+        {
+            List<ClsParametros> list = new List<ClsParametros>();
+            list.Add(new ClsParametros("@Pelicula", Pelicula));
+            DataTable dt;
+            dt = M.Listado("Listar_Fechas", list);
+
+            return dt;
+        }
+
+        public DataTable Horas(string Pelicula, string Dia)
+        {
+            List<ClsParametros> list = new List<ClsParametros>();
+            string Dia2 = "";
+            DateTime dt1 = DateTime.ParseExact(Dia, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+            Dia2 = dt1.ToString("yyyy-mm-dd");
+
+
+            list.Add(new ClsParametros("@Pelicula", Pelicula));
+            list.Add(new ClsParametros("@Dia", Dia2));
+
+            DataTable dt;
+            dt = M.Listado("Listar_Horas", list);
+
+            return dt;
         }
 
         public List<string> LeerHoras(string Pelicula, string Dia)
