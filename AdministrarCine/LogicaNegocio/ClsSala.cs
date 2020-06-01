@@ -116,6 +116,8 @@ namespace LogicaNegocio
 
         }
 
+       
+        
         public List<string> LeerHoras(string Pelicula, string Dia)
         {
             List<ClsParametros> list = new List<ClsParametros>();
@@ -286,6 +288,7 @@ namespace LogicaNegocio
 
         }
 
+      
 
     }
 }
